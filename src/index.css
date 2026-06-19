@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-cinzel: 'Cinzel Decorative', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --bg-primary: #020202;
+  --text-primary: #ffffff;
+  --color-accent: #FF002B;
+  --color-hud: #FFD700;
+  --border-primary: rgba(255, 255, 255, 0.05);
+  --mix-mode: color-dodge;
+}
+
+[data-theme='monolith'] {
+  --bg-primary: #FAFAFA;
+  --text-primary: #020202;
+  --color-accent: #1A1A1A;
+  --color-hud: #4A4A4A;
+  --border-primary: rgba(0, 0, 0, 0.08);
+  --mix-mode: multiply;
+}
+
+[data-theme='sulphur'] {
+  --bg-primary: #EAE6DF;
+  --text-primary: #1C1B1A;
+  --color-accent: #FF002B;
+  --color-hud: #B58A00;
+  --border-primary: rgba(28, 27, 26, 0.1);
+  --mix-mode: normal;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  overflow-x: hidden;
+  transition: background-color 0.2s cubic-bezier(0.25, 1, 0.5, 1), color 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@layer utilities {
+  .font-cinzel { font-family: var(--font-cinzel); }
+  .font-mono { font-family: var(--font-mono); }
+  
+  .shutter-close {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    animation: shutterWipe 0.5s cubic-bezier(0.85, 0, 0.15, 1) forwards;
+  }
+}
+
+@keyframes shutterWipe {
+  0% { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); }
+  45%, 55% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  100% { clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%); }
+}
+
+.film-grain::after {
+  content: "";
+  position: fixed;
+  top: -50%; left: -50%; right: -50%; bottom: -50%;
+  width: 200%; height: 200%;
+  background: transparent url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.035"/%3E%3C/svg%3E') repeat;
+  animation: grainShift 0.1s steps(2) infinite;
+  z-index: 99;
+  pointer-events: none;
+}
+
+@keyframes grainShift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(6px, 3px); }
+}
