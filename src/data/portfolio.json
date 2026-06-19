@@ -1,0 +1,62 @@
+{
+  "brand": {
+    "title": "M.nemosyneLens",
+    "tagline": "THE GODDESS OF MEMORY THROUGH THE SHUTTER"
+  },
+  "intro": {
+    "profilePhoto": "/profile-photo.jpg"
+  },
+  "heroSection": {
+    "subtitle": "STORIES CAUGHT IN MOTION",
+    "backgroundImage": "/images/17847795414527031.jpg"
+  },
+  "media": [
+    {
+      "id": 1,
+      "type": "photo",
+      "src": "/images/17894985399291798.jpg",
+      "title": "APOCALYPSE NOW",
+      "ISO": "800",
+      "f": "1.4",
+      "shutter": "500"
+    },
+    {
+      "id": 2,
+      "type": "video",
+      "src": "/reels/202508/17857202760497217.mp4",
+      "poster": "/images/18041896415650462.jpg",
+      "title": "NEON CHRONICLES",
+      "fps": "60",
+      "resolution": "4K",
+      "bitrate": "150Mbps"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/18066596057221329.jpg",
+      "title": "CHASING SHADOWS",
+      "ISO": "400",
+      "f": "2.8",
+      "shutter": "1000"
+    },
+    {
+      "id": 4,
+      "type": "video",
+      "src": "/reels/202509/18064383899519519.mp4",
+      "poster": "/images/18092775226676728.jpg",
+      "title": "CONCRETE DRIFT",
+      "fps": "24",
+      "resolution": "1080p",
+      "bitrate": "50Mbps"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/18107914837550125.jpg",
+      "title": "STEEL GODS",
+      "ISO": "100",
+      "f": "4.0",
+      "shutter": "125"
+    }
+  ]
+}
